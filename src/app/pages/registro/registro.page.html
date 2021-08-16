@@ -1,0 +1,109 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"
+                       color="light">
+    </ion-back-button>
+  </ion-buttons>
+
+    <ion-title>Crear Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list>
+
+
+    <form #formulario="ngForm" (ngSubmit)="obSubmin(formulario)">
+    
+      <ion-list-header>
+        <ion-label class="text-small">
+          Registrate
+        </ion-label>
+      </ion-list-header>
+      
+
+      <ion-item>
+       <ion-label class="text-small"
+                  position="stacked">
+         Nombre: 
+       </ion-label>
+       <br>
+        <ion-input type="text" 
+                   placeholder="Ingrese tu nombre">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="text-small" 
+                   position="stacked">
+          Paterno: 
+        </ion-label>
+        <br>
+        <ion-input type="text" 
+                   placeholder="Ingrese tu Apellido Paterno">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="text-small" 
+                   position="stacked">
+          Materno: 
+        </ion-label>
+        <br>
+        <ion-input type="text" 
+                   placeholder="Ingrese tu Apellido Materno">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="text-small" 
+                   position="stacked">
+          Correo Electronico: 
+        </ion-label>
+        <br>
+        <ion-input type="email" 
+                  placeholder="Ingrese su correo"
+                  name="email"
+                  [(ngModel)]="usuario.email"
+                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                  required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="text-small" 
+                   position="stacked">
+          Contraseña: 
+        </ion-label>
+        <br>
+        <ion-input type="password" 
+                   name="password"
+                   [(ngModel)]="usuario.password"
+                   required
+                   placeholder="Ingrese su contraseña">
+        </ion-input>
+      </ion-item>
+      <br>
+      <ion-button size="large"
+                  [disabled]="formulario.invalid"
+                  type="submit" 
+                  routerLink="/login"
+                  expand="block">
+        Registrarte
+      </ion-button>
+      
+
+
+    </form>
+
+
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center"> SOCCER 4U </ion-title>
+  </ion-toolbar>
+</ion-footer>
